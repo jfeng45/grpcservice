@@ -1,0 +1,31 @@
+syntax = "proto3";
+package grpc1;
+
+service CacheService {
+    rpc Store(StoreReq ) returns (StoreResp) {}
+    rpc Get(GetReq) returns (GetResp) {}
+    rpc Dump(DumpReq) returns (stream DumpItem) {}
+}
+
+message DumpReq {
+
+}
+
+message DumpItem {
+    string key=1;
+    bytes val=2;
+}
+message StoreReq {
+    string key  = 1;
+    bytes value =2;
+}
+
+message StoreResp {
+
+}
+message GetReq {
+    string key  = 1;
+}
+message GetResp {
+    bytes value =1;
+}
