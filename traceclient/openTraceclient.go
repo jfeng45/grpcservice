@@ -12,11 +12,12 @@ import (
 	"log"
 	"time"
 )
-
-const endpointURL = "http://localhost:9411/api/v1/spans"
-const hostUrl = "localhost:5051"
-const service_name_cache_client = "cache service client"
-const service_name_call_get = "callGet"
+const (
+	endpointURL = "http://localhost:9411/api/v1/spans"
+	hostUrl = "localhost:5051"
+	service_name_cache_client = "cache service client"
+	service_name_call_get = "callGet"
+)
 
 func callStore(key string, value []byte, client pb.CacheServiceClient) ( *pb.StoreResp, error) {
 	storeReq := pb.StoreReq{Key: key, Value: value}

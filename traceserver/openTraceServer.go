@@ -11,12 +11,13 @@ import (
 	"net"
 	"time"
 )
-
-const endpointURL = "http://localhost:9411/api/v1/spans"
-const hostUrl = "localhost:5051"
-const service_name_cache_server = "cache server"
-const service_name_db_query_user = "db query user"
-const network = "tcp"
+const (
+	endpointURL = "http://localhost:9411/api/v1/spans"
+	hostUrl = "localhost:5051"
+	service_name_cache_server = "cache server"
+	service_name_db_query_user = "db query user"
+	network = "tcp"
+)
 
 //CacheService struct
 type CacheService struct {
