@@ -12,8 +12,8 @@ import (
 	"time"
 )
 const (
-	endpointURL = "http://localhost:9411/api/v1/spans"
-	hostUrl = "localhost:5051"
+	endpoint_url = "http://localhost:9411/api/v1/spans"
+	host_url = "localhost:5051"
 	service_name_cache_server = "cache server"
 	service_name_db_query_user = "db query user"
 	network = "tcp"
@@ -65,11 +65,11 @@ func (c *CacheService) Dump(*pb.DumpReq, pb.CacheService_DumpServer) error {
 
 }
 func newTracer () (opentracing.Tracer, error) {
-	collector, err := openzipkin.NewHTTPCollector(endpointURL)
+	collector, err := openzipkin.NewHTTPCollector(endpoint_url)
 	if err != nil {
 		return nil, err
 	}
-	recorder :=openzipkin.NewRecorder(collector, true, hostUrl, service_name_cache_server)
+	recorder :=openzipkin.NewRecorder(collector, true, host_url, service_name_cache_server)
 	tracer, err := openzipkin.NewTracer(
 		recorder,
 		openzipkin.ClientServerSameSpan(true))
@@ -84,7 +84,7 @@ func newTracer () (opentracing.Tracer, error) {
 
 func main() {
 	fmt.Println("starting server...")
-	connection, err := net.Listen(network, hostUrl)
+	connection, err := net.Listen(network, host_url)
 	if err != nil {
 		panic(err)
 	}
