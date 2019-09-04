@@ -13,6 +13,7 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/openzipkin-contrib/zipkin-go-opentracing v0.3.5
 	github.com/openzipkin/zipkin-go-opentracing v0.3.5
+	github.com/sony/gobreaker v0.4.1
 	golang.org/x/net v0.0.0-20190813141303-74dc4d7220e7
 	google.golang.org/grpc v1.23.0
 	gopkg.in/jcmturner/goidentity.v3 v3.0.0 // indirect
