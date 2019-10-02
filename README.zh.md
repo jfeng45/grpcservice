@@ -11,6 +11,12 @@
 * 故障注入（Fault Injection）
 * 舱壁隔离技术（Bulkhead）
 
+Please read the following articles for detail：
+
+1. [Go全链路跟踪详解](https://zhuanlan.zhihu.com/p/79419529)
+
+1. [Go微服务容错与韧性（Service Resilience）](https://zhuanlan.zhihu.com/p/81111394)
+
 我最初从[Alan Shreve的gRPC缓存服务](https://about.sourcegraph.com/go/grpc-in-production-alan-shreve)中获取代码，并在其中添加了以上功能。
 
 ### 安装和运行
